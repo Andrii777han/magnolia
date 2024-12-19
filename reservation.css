@@ -1,0 +1,199 @@
+body {
+    background-image: url('bron.jpg');
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+
+.top-right-text {
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    padding: 10px;
+    font-size: 18px;
+    font-family: 'Arial', sans-serif;
+    color: rgb(255, 128, 0);
+}
+
+.center-texts {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.center-text1 {
+    font-size: 70px;
+    color: rgb(255, 255, 255);
+    font-family: Verdana, Geneva, sans-serif;
+    text-align: center;
+    padding-top: 10%;
+}
+
+.center-text2 {
+    font-size: 20px;
+    font-family: 'Arial', sans-serif;
+    color: rgb(255, 128, 0);
+    margin: 10px 0;
+}
+
+.form-container {
+    padding: 20px;
+    width: 80%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+
+.form-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="time"],
+input[type="date"],
+input[type="number"],
+textarea {
+    width: 100%;
+    height: 40px;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 13px;
+    font-size: 14px;
+    background-color: #d2d0d0;
+    opacity: 0.5;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #000000;
+    font-style: italic;
+}
+
+#comment {
+    width: 100%;
+    height: 80px;
+    padding: 8px;
+    margin-top: 15px;
+    border-radius: 13px;
+    font-size: 14px;
+    background-color: #d2d0d0;
+    opacity: 0.5;
+}
+
+button {
+    padding: 20px;
+    background-color: rgb(255, 128, 0);
+    color: white;
+    border: none;
+    border-radius: 13px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 15px;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+
+@media (max-width: 768px) {
+    .form-row {
+        flex-direction: column;
+    }
+
+    .row {
+        flex-direction: column;
+    }
+
+    .form-group {
+        width: 100%;
+    }
+
+    .center-text1 {
+        font-size: 40px;
+    }
+
+    .center-text2 {
+        font-size: 16px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="time"],
+    input[type="date"],
+    input[type="number"],
+    textarea {
+        width: 100%;
+    }
+
+    #comment {
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .top-right-text {
+        font-size: 14px;
+    }
+
+    .center-text1 {
+        font-size: 30px;
+    }
+
+    .center-text2 {
+        font-size: 14px;
+    }
+
+    button {
+        padding: 15px;
+    }
+
+    .form-container {
+        padding: 10px;
+        width: 90%;
+    }
+
+    .form-group {
+        max-width: 100%;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="time"],
+    input[type="date"],
+    input[type="number"],
+    textarea {
+        height: 35px;
+        font-size: 12px;
+    }
+
+    #comment {
+        height: 70px;
+    }
+}

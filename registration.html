@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вхід</title>
+    <link rel="icon" href="logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="registration.css">
+    
+</head>
+<body>
+    <a href="index.php"><div class="top-right-text">—————&nbsp;&nbsp;&nbsp;&nbsp;Увійти&nbsp;&nbsp;&nbsp;&nbsp;—————</div></a>
+    <div class="container">
+        <div class="tabs">
+            <button id="loginTab" class="tab active">Вхід</button>
+            <button id="registerTab" class="tab">Реєстрація</button>
+        </div>
+        
+       
+        <div id="loginForm" class="form-container"  >
+            <h2>Вхід</h2>
+            <form id="login" onsubmit="return validateLogin()"method="POST" action="login.php">
+                <div class="input-group">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" name="email" required>
+                </div>
+                <div class="input-group">
+                    <label for="loginPassword">Пароль</label>
+                    <input type="password" id="loginPassword" name="password" required>
+                </div>
+                <button type="submit">Увійти</button>
+            </form>
+        </div>
+
+       
+        <div id="registerForm" class="form-container hidden">
+            <h2>Реєстрація</h2>
+            <form id="register" onsubmit="return validateRegister()" method="POST" action="registration.php">
+                <div class="input-group">
+                    <label for="registerEmail">Email</label>
+                    <input type="email" id="registerEmail" name="email" required>
+                </div>
+                <div class="input-group">
+                    <label for="registerPhone">Телефон</label>
+                    <input type="text" id="registerPhone" name="phone" required>
+                </div>
+                <div class="input-group">
+                    <label for="registerPassword">Пароль</label>
+                    <input type="password" id="registerPassword" name="password" required>
+                </div>
+                <button type="submit">Зареєструватися</button>
+            </form>
+        </div>
+    </div>
+    <script>
+      
+document.getElementById('loginTab').addEventListener('click', function() {
+    document.getElementById('loginForm').classList.remove('hidden');
+    document.getElementById('registerForm').classList.add('hidden');
+    document.getElementById('loginTab').classList.add('active');
+    document.getElementById('registerTab').classList.remove('active');
+});
+
+document.getElementById('registerTab').addEventListener('click', function() {
+    document.getElementById('registerForm').classList.remove('hidden');
+    document.getElementById('loginForm').classList.add('hidden');
+    document.getElementById('registerTab').classList.add('active');
+    document.getElementById('loginTab').classList.remove('active');
+});
+
+
+function validateLogin() {
+    const email = document.getElementById('loginEmail').value;
+    const emailPattern = /^[^\s@]+@gmail\.com$/; // Перевірка на домен @gmail.com
+
+    if (!email.match(emailPattern)) {
+        alert('Електронна пошта має закінчуватися на @gmail.com');
+        return false;
+    }
+    return true;
+}
+
+function validateRegister() {
+    const email = document.getElementById('registerEmail').value;
+    const phone = document.getElementById('registerPhone').value;
+    const emailPattern = /^[^\s@]+@gmail\.com$/; // Перевірка на домен @gmail.com
+    const phonePattern = /^[\d\+\-\(\) ]{10}$/;
+
+    if (!email.match(emailPattern)) {
+        alert('Електронна пошта має закінчуватися на @gmail.com');
+        return false;
+    }
+
+    if (!phone.match(phonePattern)) {
+        alert('Введіть коректний номер телефону');
+        return false;
+    }
+
+    return true;
+}
+
+    </script>
+
+
+</body>
+</html>

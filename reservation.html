@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бронювання</title>
+    <link rel="stylesheet" href="reservation.css">
+    <link rel="icon" href="7.png" type="image/png">
+</head>
+<body>
+    <a href="index.php"><div class="top-right-text">—————&nbsp;&nbsp;&nbsp;&nbsp;Бронювання&nbsp;&nbsp;&nbsp;&nbsp;—————</div></a>
+
+   
+
+    <div class="center-texts">
+        <div class="center-text1">Замовлення столів</div>
+        <div class="center-text2">Якщо ви хочете зарезервувати столик, скористайтеся формою нижче</div>
+    </div>
+
+    <div class="form-container">
+        <form action="reservation.php" method="POST" class="form-row" id="reservationForm">
+            <div class="row">
+                <div class="form-group">
+                    <input type="text" id="name" name="name" placeholder="Ім'я" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" name="email" placeholder="E-mail" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="phone" name="phone" placeholder="Телефон" required>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group">
+                    <input type="time" id="time" name="time" required>
+                </div>
+                <div class="form-group">
+                    <input type="date" id="date" name="date" required>
+                </div>
+                <div class="form-group">
+                    <input type="number" id="guests" name="guests" placeholder="Кількість відвідувачів" required>
+                </div>
+            </div>
+            
+
+          
+            <div class="row">
+                <div class="form-group">
+                    <textarea id="comment" name="comment" placeholder="Коментар" rows="4"></textarea>
+                </div>
+            </div>
+
+        
+            <div class="row">
+                <button type="submit" id="reservationFormButton">Підтвердити бронювання</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+     
+      
+document.getElementById('reservationForm').onsubmit = function(event) {
+    
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
+    const time = document.getElementById('time').value;
+    const date = document.getElementById('date').value;
+    const guests = document.getElementById('guests').value;
+    const comment = document.getElementById('comment').value;
+
+   
+    if (!name || !email || !phone || !time || !date || !guests) {
+        alert('Будь ласка, заповніть всі обов\'язкові поля!');
+        event.preventDefault(); 
+        return false;
+    }
+
+   
+    const emailPattern = /^[a-zA-Z0-9._-]+@gmail\.com$/;
+    if (!email.match(emailPattern)) {
+        alert('Будь ласка, введіть коректний email, що закінчується на gmail.com!');
+        event.preventDefault();
+        return false;
+    }
+
+
+    const phonePattern = /^[\d\+\-\(\) ]{10}$/;
+    if (!phone.match(phonePattern)) {
+        alert('Будь ласка, введіть коректний номер телефону!');
+        event.preventDefault();
+        return false;
+    }
+
+    return true; 
+}
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,184 @@
+body {
+    background-image: url('1.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+}
+
+.nav1, .nav {
+    font-family: 'Courier New', Courier, monospace;
+    margin: 40px;
+    font-size: 30px;
+}
+
+.nav1 {
+    padding-left: 520px;
+}
+
+.nav {
+    padding-left: 0;
+    text-align: center;
+}
+
+a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+.nav2 {
+    font-family: Arial, sans-serif;
+    margin: 40px;
+    font-size: 15px;
+    text-align: center;
+}
+
+.image-container {
+    text-align: center;
+    margin-top: 110px;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.bottom-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    position: fixed;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+}
+
+.box {
+    width: 200px;
+    height: 110px;
+    background-color: rgba(128, 128, 128, 0.707);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.box img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+}
+
+.box .caption1 {
+    margin-top: 10px;
+    font-size: 15px;
+    color: white;
+    text-align: center;
+    font-family: 'Georgia', serif;
+}
+
+.box .caption2 {
+    margin-top: 10px;
+    font-size: 10px;
+    color: rgb(173, 165, 165);
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+}
+
+@media (max-width: 1024px) {
+    .nav1, .nav, .nav2 {
+        font-size: 20px;
+        margin: 10px;
+    }
+
+    .nav {
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .image-container {
+        margin-top: 80px;
+    }
+
+    .bottom-container {
+        flex-direction: column; 
+        gap: 15px;
+    }
+
+    .box {
+        width: 150px;
+        height: 120px;
+        padding: 8px;
+    }
+
+    .box img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .box .caption1 {
+        font-size: 12px;
+    }
+
+    .box .caption2 {
+        font-size: 8px;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        background-size: cover;
+        background-position: center center;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        background-size: cover;
+        background-position: center center;
+    }
+
+    .nav1, .nav, .nav2 {
+        font-size: 18px;
+        margin: 5px;
+    }
+
+    .nav {
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .bottom-container {
+        gap: 10px;
+    }
+
+    .box {
+        width: 130px;
+        height: 100px;
+        padding: 5px;
+    }
+
+    .box img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .box .caption1 {
+        font-size: 12px;
+    }
+
+    .box .caption2 {
+        font-size: 8px;
+    }
+}
+
+@media (min-width: 1200px) {
+    body {
+        background-size: cover;
+        background-position: center center;
+    }
+}
